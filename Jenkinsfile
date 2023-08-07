@@ -4,7 +4,7 @@ pipeline {
         stage('deploy') {
 		 steps {
                 withAWS(region: 'us-east-1', credentials: 'aws-jenkin') {
-                   sh "aws s3 cp Code/index.html s3://jenkins-s3-demo"
+	           s3Upload(file:'index.html', bucket:'jenkins-s3-demo', path:'Code/index.html')
                 }
             
         }
