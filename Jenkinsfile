@@ -5,7 +5,7 @@ pipeline {
           steps{
               withAWS(credentials: 'aws-jenkins-demo', region: 'us-east-1') {
                    sh 'aws s3 cp Code/index.html s3://jenkin-s3-demo'
-                   sh 'aws s3 cp public/error.html s3://jenkin-s3-demo'
+                   sh 'aws s3 cp Code/error.html s3://jenkin-s3-demo'
            
              
               }
