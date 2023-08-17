@@ -5,8 +5,8 @@ pipeline {
           steps{
               withAWS(credentials: 'aws-jenkins-demo', region: 'us-east-1') {
                    sh 'echo "hello Sinaj">hello.txt'
-                   s3Upload acl: 'Private', bucket: 'jenkin-s3-demo', file: 'hello.txt'
-
+                 sh 'aws s3 cp hello.txt s3://jenkins-s3'
+ 
            
              
               }
